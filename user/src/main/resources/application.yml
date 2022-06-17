@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: gccw-assignment-user-service
+
+mjson:
+  json:
+    prefix: DEREKP
+    suffix: DEREKS
+debug: true
+
+server:
+  port: 9999
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9094/eureka/

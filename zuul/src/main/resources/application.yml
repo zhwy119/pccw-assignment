@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: gccw-assignment-zull
+  profiles:
+    active: local
+
+server:
+  port: 9095
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:9094/eureka/
+
+zuul:
+  routes:
+    picc4-loan:
+      path: /rest/**
+      serviceId: rest
+    edu-loan:
+      path: /edu/**
+      serviceId: edu
+#  prefix: /rest
+  host:
+    connect-timeout-millis: 40000
+    socket-timeout-millis: 60000
+
+ribbon:
+  ReadTimeout: 35000
+  ConnectTimeout: 35000
+eureka:
+  instance:
+    prefer-ip-address: true
+logging:
+  file: picc4-zuul.log
