@@ -9,12 +9,7 @@ import org.springframework.web.filter.CorsFilter;
 
 @Configuration
 public class SystemConfig {
-/*    @Bean
-    public PatternServiceRouteMapper serviceRouteMapper() {
-        return new PatternServiceRouteMapper(
-                "(?<name>^.+)-(?<version>v.+$)",
-                "${version}/${name}");
-    }*/
+
 
     @Bean
     public CorsFilter corsFilter() {

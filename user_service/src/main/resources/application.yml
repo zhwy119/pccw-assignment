@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: gccw-assignment-user-service
+mjson:
+  json:
+    prefix: DEREKP
+    suffix: DEREKS
+server:
+  port: 9999
+

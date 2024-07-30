@@ -7,20 +7,14 @@ spring:
 server:
   port: 9095
 
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:9094/eureka/
-
 zuul:
   routes:
-    picc4-loan:
-      path: /rest/**
-      serviceId: rest
-    edu-loan:
-      path: /edu/**
-      serviceId: edu
-#  prefix: /rest
+    user:
+      path: /user/**
+      serviceId: gccw-assignment-user-service
+    emails:
+      path: /email/**
+      serviceId: gccw-assignment-email-service
   host:
     connect-timeout-millis: 40000
     socket-timeout-millis: 60000
@@ -31,5 +25,3 @@ ribbon:
 eureka:
   instance:
     prefer-ip-address: true
-logging:
-  file: picc4-zuul.log

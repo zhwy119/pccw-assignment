@@ -1,7 +1,4 @@
-#logging:
-#  path: /Users/admin/dev/logs
-#  file: picc4-zuul.log
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9094/eureka/
+      defaultZone: http://127.0.0.1:9094/eureka/

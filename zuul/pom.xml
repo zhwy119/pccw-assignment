@@ -6,7 +6,7 @@
         <groupId>com.derek</groupId>
         <artifactId>pccw-assignment</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath> <!-- lookup parent from repository -->
+        <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
     <artifactId>zuul</artifactId>
     <version>${project.parent.version}</version>
@@ -37,17 +37,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!-- Swagger2 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.6.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.6.1</version>
-        </dependency>
+
 
     </dependencies>
 
