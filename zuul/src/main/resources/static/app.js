@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let users = [];
     let emails = [];
     let editIndex = -1;
-    let deletingIndex = -1; // 记录正在删除的用户索引
+    let deletingIndices = []; // 记录正在删除的用户索引
 
     async function loadUsers() {
         try {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <td>${user.email}</td>
                 <td>
                     <button class="btn btn-warning btn-sm" onclick="editUser(${index})">Edit</button>
-                    <button class="btn btn-danger btn-sm" onclick="confirmDeleteUser(${index})">Delete</button>
+                    <button class="btn btn-danger btn-sm" onclick="confirmDeleteUsers([${index}])">Delete</button>
                 </td>
             `;
             usersTableBody.appendChild(row);
@@ -110,26 +110,31 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#userModal').modal('show');
     };
 
-    window.confirmDeleteUser = function (index) {
-        deletingIndex = index;
+    window.confirmDeleteUsers = function (indices) {
+        deletingIndices = indices;
         $('#confirmDeleteModal').modal('show'); // 显示确认删除对话框
     };
 
     confirmDeleteButton.addEventListener('click', async function () {
         confirmDeleteButton.disabled = true;
-        await deactivateUser(deletingIndex);
-        confirmDeleteButton.disabled = true;
+        await deactivateUsers(deletingIndices);
+        confirmDeleteButton.disabled = false;
         $('#confirmDeleteModal').modal('hide');
     });
 
-    async function deactivateUser(index) {
+    async function deactivateUsers(indices) {
+        if (!Array.isArray(indices)) {
+            console.error('Indices should be an array');
+            return;
+        }
 
         try {
             loadingOverlay.style.display = 'flex';
-            await axios.delete(`/user/users/${users[index].id}`);
+            const ids = indices.map(index => users[index].id);
+            await axios.delete('/user/users', { data: ids });
             await loadUsers();
         } catch (error) {
-            console.error('Error deactivating user:', error);
+            console.error('Error deactivating users:', error);
         } finally {
             loadingOverlay.style.display = 'none';
         }

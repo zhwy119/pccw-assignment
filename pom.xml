@@ -30,10 +30,12 @@
     </properties>
 
     <modules>
-        <module>eureka_server</module>
+        <module>eureka-server</module>
         <module>zuul</module>
-        <module>user_service</module>
-        <module>email_service</module>
+        <module>user-service</module>
+        <module>email-service</module>
+        <module>email-interface</module>
+        <module>common</module>
     </modules>
 
     <dependencyManagement>
@@ -123,7 +125,7 @@
             </dependency>
             <dependency>
                 <groupId>com.derek</groupId>
-                <artifactId>email_interface</artifactId>
+                <artifactId>email-interface</artifactId>
                 <version>${gccw-email-interface.version}</version>
             </dependency>
             <dependency>

@@ -1,4 +1,0 @@
-FROM java:8
-VOLUME /tmp/tomcat
-ADD user-0.0.1-SNAPSHOT.jar user-docker.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/user-docker.jar"]

@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://rm-cn-jmp3q5e740005uko.rwlb.rds.aliyuncs.com:3306/pccw_assignment?useUnicode=true
+    username: pccw_assignment
+    password: pccw@2024
+    driver-class-name: com.mysql.jdbc.Driver
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-email-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+email:
+  isMock: true
+eureka:
+  client:
+    serviceUrl:
+            defaultZone: http://pccw-assignment-eureka-server:9094/eureka/
