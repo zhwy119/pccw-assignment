@@ -8,18 +8,18 @@ This project is an implementation of a technical assignment for PCCW. It is buil
 - **User Service**: Manages user-related operations.
 - **Email Service**: Handles email sending and notifications.
 - **UI**: UI to register, edit, deactivate, show existing registered users and view all emails that
-  were sent
+  were sent.
 
 ## Technology Stack
 
+- **JDK 1.8**: Java Development Kit version used.
 - **Spring Boot 2.1.5.RELEASE**: Framework version used.
-- **MySQL**: Database used.
+- **MySQL 8.0**: Database used.
 - **MyBatis-Plus 3.1.2**: Database operation framework.
 - **JUnit & Mockito**: Testing frameworks for unit and integration tests.
 - **Docker**: Containerization platform for deploying the application.
 - **Maven**: Build automation tool for managing project dependencies and build lifecycle.
 - **HTML, Bootstrap, Axios, jQuery**: Frontend technologies for building the user interface.
-- **JDK 1.8**: Java Development Kit version used.
 
 ## Project Structure
 
@@ -36,6 +36,40 @@ The `pccw-assignment` directory includes:
 - **README.md**: Project documentation
 - **docker_deploy.sh**: Docker deployment script
 
-Key
+## Key Resources
 
+- **Frontend Code**: The frontend code is located in zuul, `pccw-assignment/zuul/src/main/resources/static`
+- **Database Scripts**: Available in the `pccw-assignment/zz_dbscripts` directory.
+- **Docker Deployment**: The deployment script is located in `pccw-assignment/docker_deploy.sh`.
+- **Docker Profile**: In `pccw-assignment/module/src/main/docker` for every module.
+- **API Documentation**: Available in the `pccw-assignment/zz_apidocs` directory.
+
+## How to Run
+
+1. **Install Prerequisites**:
+  - **Java 1.8**: Ensure JDK 1.8 is installed.
+  - **MySQL 8.0**: Install and configure MySQL 8.0. Run database scripts in `pccw-assignment/zz_dbscripts`, update database configurations in user-service and email-service.
+  - **Maven**: Ensure maven is installed.
+  - **Docker**: Ensure docker is installed.
+
+2. **Download the Code**:
+  - Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd pccw-assignment
+    ```
+
+3. **Run Docker Deployment**:
+  - Execute the deployment script:
+    ```bash
+    ./docker_deploy.sh
+    ```
+
+   The script will build Docker images and start containers for the microservices.
+
+4. **Access the Services**:
+  - **Eureka Server**: http://localhost:9094
+  - **Frontend UI**: http://127.0.0.1:9095/index.html
+  - **API Calling(Zuul Gateway)**: http://localhost:9095/{apipath}
+  - **User Service** and **Email Service**: Access through the Zuul gateway routing.
 

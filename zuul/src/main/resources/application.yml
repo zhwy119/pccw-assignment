@@ -8,6 +8,7 @@ server:
   port: 9095
 
 zuul:
+  refreshInterval: 10s
   routes:
     user:
       path: /user/**
@@ -25,3 +26,6 @@ ribbon:
 eureka:
   instance:
     prefer-ip-address: true
+  client:
+    refreshInterval: 10s
+

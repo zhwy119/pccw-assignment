@@ -9,4 +9,7 @@ mjson:
     suffix: DEREKS
 server:
   port: 9999
+eureka:
+  client:
+    refreshInterval: 10s
 
