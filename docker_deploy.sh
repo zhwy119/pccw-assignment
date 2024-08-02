@@ -26,6 +26,7 @@ install_jars(){
 
 # Function to build the service
 build_service() {
+    install_jars
     local service_dir=$1
 
     echo "Building Docker image for $service_dir..."
