@@ -139,6 +139,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.2</version>
                 <configuration>
                     <imageName>${docker.image.prefix}-${project.artifactId}</imageName>
                     <!--docker文件所在的目录-->

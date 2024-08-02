@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:8
 VOLUME /tmp/tomcat
 ADD zuul-0.0.1-SNAPSHOT.jar zuul-docker.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/zuul-docker.jar", "--spring.profiles.active=test"]

@@ -55,7 +55,7 @@ The `pccw-assignment` directory includes:
 2. **Download the Code**:
   - Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/zhwy119/pccw-assignment/
     cd pccw-assignment
     ```
 
@@ -68,8 +68,8 @@ The `pccw-assignment` directory includes:
    The script will build Docker images and start containers for the microservices.
 
 4. **Access the Services**:
-  - **Eureka Server**: http://localhost:9094
+  - **Eureka Server**: http://127.0.0.1:9094
   - **Frontend UI**: http://127.0.0.1:9095/index.html
-  - **API Calling(Zuul Gateway)**: http://localhost:9095/{apipath}
+  - **API Calling(Zuul Gateway)**: http://127.0.0.1:9095/{apipath}
   - **User Service** and **Email Service**: Access through the Zuul gateway routing.
 
