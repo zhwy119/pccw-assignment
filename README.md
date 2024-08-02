@@ -55,7 +55,7 @@ The `pccw-assignment` directory includes:
 2. **Download the Code**:
   - Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/zhwy119/pccw-assignment/
     cd pccw-assignment
     ```
 
