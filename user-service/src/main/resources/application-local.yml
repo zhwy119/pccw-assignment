@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://rm-cn-jmp3q5e740005uko.rwlb.rds.aliyuncs.com:3306/pccw_assignment?useUnicode=true
+    url: jdbc:mysql://rm-cn-x0r3n1y8i000sxpo.rwlb.rds.aliyuncs.com:3306/pccw_assignment?useUnicode=true
     username: pccw_assignment
     password: pccw@2024
     driver-class-name: com.mysql.jdbc.Driver

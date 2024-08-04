@@ -20,13 +20,30 @@
             font-size: 20px;
             z-index: 1050; /* 确保在所有其他元素之上 */
         }
+        #errorContainer {
+            display: none;
+            color: red;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid red;
+            border-radius: 5px;
+            background-color: #f8d7da;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* 确保在其他元素之上 */
+        }
     </style>
 </head>
 <body>
+<!-- Error Container -->
+<div id="errorContainer"></div>
+
 <div class="container mt-5">
     <h2>User Management</h2>
-    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#userModal" id="addUserButton">Add User
-    </button>
+    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#userModal" id="addUserButton">Add User</button>
     <h3>Registered Users</h3>
     <table class="table table-bordered" id="usersTable">
         <thead>
@@ -100,8 +117,7 @@
 </div>
 
 <!-- Confirm Delete Modal -->
-<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

@@ -67,7 +67,7 @@ The `pccw-assignment` directory includes:
 
    The script will build Docker images and start containers for the microservices.
 
-      **Troubleshooting:**
+    **Troubleshooting:**
 - **Permission Issues**: If you encounter a permission error with `docker_deploy.sh`, ensure the script has executable permissions. You can set the permissions using:
   ```bash
   chmod +x docker_deploy.sh
@@ -75,7 +75,7 @@ The `pccw-assignment` directory includes:
 - **openjdk:8 Download Issues**: If you encounter issues pulling the `openjdk:1.8` image, ensure that your Docker daemon is configured with a working registry mirror. You can configure Docker to use a mirror by editing `/etc/docker/daemon.json` with:
   ```json
   {
-    "registry-mirrors": ["https://registry.docker-cn.com"]
+   "registry-mirrors": ["https://hub.uuuadc.top/"]
   }
   ```
   After editing the file, reload the systemd configuration and restart Docker with:

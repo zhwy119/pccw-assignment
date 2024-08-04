@@ -5,11 +5,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const saveUserButton = document.getElementById('saveUserButton');
     const loadingOverlay = document.getElementById('loadingOverlay');
     const confirmDeleteButton = document.getElementById('confirmDeleteButton');
+    const errorContainer = document.getElementById('errorContainer'); // 用于显示错误消息
 
     let users = [];
     let emails = [];
     let editIndex = -1;
     let deletingIndices = []; // 记录正在删除的用户索引
+
+    function showError(message) {
+        errorContainer.textContent = message; // 显示错误消息
+        errorContainer.style.display = 'block'; // 显示错误容器
+
+        // 5秒后隐藏错误消息
+        setTimeout(() => {
+            errorContainer.style.display = 'none';
+        }, 5000);
+    }
 
     async function loadUsers() {
         try {
@@ -19,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             renderUsers();
         } catch (error) {
             console.error('Error loading users:', error);
+            showError('Error loading users. Please try again later.');
         } finally {
             loadingOverlay.style.display = 'none';
         }
@@ -33,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             renderEmails();
         } catch (error) {
             console.error('Error loading emails:', error);
+            showError('Error loading emails. Please try again later.');
         } finally {
             loadingOverlay.style.display = 'none';
         }
@@ -96,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
             userForm.classList.remove('was-validated');
         } catch (error) {
             console.error('Error saving user:', error);
+            showError('Error saving user. Please try again later.');
         } finally {
             saveUserButton.disabled = false;  // 重新启用按钮
         }
@@ -135,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
             await loadUsers();
         } catch (error) {
             console.error('Error deactivating users:', error);
+            showError('Error deactivating users. Please try again later.');
         } finally {
             loadingOverlay.style.display = 'none';
         }
